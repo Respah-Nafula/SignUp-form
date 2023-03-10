@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>sign Up Form</h1>
+    <script>
+function validateForm() {
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const gender = document.getElementById("gender");
+    const password = document.getElementById("password");
+    let error = false;
+  
+    // check if name field is empty
+    if (name.value === "") {
+      name.style.border = "2px solid red";
+      error = true;
+    } else {
+      name.style.border = "";
+    }
+  
+    // check if email field is empty and in correct format
+    if (email.value === "") {
+      email.style.border = "2px solid red";
+      error = true;
+    } else {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value)) {
+        email.style.border = "2px solid red";
+        alert("Please enter a valid email address.");
+        error = true;
+      } else {
+        email.style.border = "";
+      }
+    }
+  
+    // check if phone field is empty
+    if (phone.value === "") {
+      phone.style.border = "2px solid red";
+      error = true;
+    } else {
+      phone.style.border = "";
+    }
+  
+    // check if gender field is empty
+    if (gender.value === "") {
+      gender.style.border = "2px solid red";
+      error = true;
+    } else {
+      gender.style.border = "";
+    }
+  
+    // check if password field is empty
+    if (password.value === "") {
+      password.style.border = "2px solid red";
+      error = true;
+    } else {
+      password.style.border = "";
+    }
+     }  
+    // display error message if there is an error
+
+    </script>
+    
+</body>
+</html>
