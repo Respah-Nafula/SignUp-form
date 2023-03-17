@@ -2,33 +2,45 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Sign Up Form</title>
+    <title>Document</title>
     <style>
        body {
         font-family: Arial;
-        background-color: #fcf5f5;
+        background-color: #dcd9d9;
         margin: 0;
         padding: 0;
+
+      }
+      h1{
+        text-align: center;
+        color: green;
+        font-size: 30px;
       }
 
       form {
-        max-width: 450px;
+        max-width: 300px;
         margin: 15px auto;
-        background-color: #fff;
         border-radius: 5px;
-        padding: 20px;
-        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+        padding: 30px;
+        background-color: rgb(167, 157, 157);
+      
       }
 
       label {
         display: block;
         margin-bottom: 10px;
         font-weight: bold;
+        color: rgb(14, 14, 18);
+        font-weight: 900;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font: italic;
+      
       }
 
       input[type="text"],
       input[type="email"],
       input[type="password"],
+    
 
       select {
         width: 100%;
@@ -37,21 +49,23 @@
         border: 1px solid #ccc;
         margin-bottom: 20px;
         box-sizing: border-box;
+        color:plum;
       }
 
       input[type="submit"] {
-        background-color: #4CAF50;
-        color: #fff;
+        background-color: #1d1f1d;
         padding: 10px 20px;
         border: none;
-        border-radius: 5px;
+        border-radius: 25px;
         cursor: pointer;
+        color: white;
+        font-size: 20px;
+    
       }
 
       input[type="submit"]:hover {
-        background-color: #3e8e41;
+        background-color: #2251d2;
       }
-
       .error {
         color: red;
         font-weight: bold;
@@ -63,56 +77,61 @@
         font-weight: bold;
         margin-bottom: 10px;
       }
+      
     </style>
   </head>
   <body>
+   <h1>Sign Up Form</h1>
     <form id="myForm" method="post">
       <label for="name"> First Name:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name=" first name" placeholder="Enter your first name"  required>
 
       <label for="name"> Last Name:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="last name" placeholder="Enter your last name"  required>
 
       <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
 
       <label for="phone">Phone Number:</label>
-      <input type="text" id="phone" name="phone" required>
+      <input type="text" id="phone" name="phone" placeholder="Enter your phone Number" required>
+
+      <label for="phone">Id Number:</label>
+      <input type="text" id="phone" name="id" placeholder="Enter your valid Id Number" required>
 
       <label for="gender">Gender:</label>
       <select id="gender" name="gender" required>
-        <option value="">Select Gender</option>
+        <option value="">Select the gender that best describes you</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="other">Prefer not to say</option>
       </select>
 
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" name="password" placeholder="Enter a valid password" required>
 
       <input type="submit" value="Submit">
     </form>
-
     <script>
       const form = document.getElementById('myForm');
       const nameInput = document.getElementById('name');
       const emailInput = document.getElementById('email');
       const phoneInput = document.getElementById('phone');
+      const idInput = document.getElementById('id');
       const genderInput = document.getElementById('gender');
       const passwordInput = document.getElementById('password');
 
       form.addEventListener('submit', (event) => {
         let isValid = true;
 
-        if (nameInput.value.trim() === '') {
-          nameInput.classList.add('error');
+        if (nameInput.value.trim() == "") {
+          nameInput.classList.add('fill in the name field');
           isValid = false;
         } else {
           nameInput.classList.remove('error');
         }
 
         if (emailInput.value.trim() === '') {
-          emailInput.classList.add('error');
+          emailInput.classList.add('Please input the correct email field before you proceed');
           isValid = false;
         } else if (!isValidEmail(emailInput.value.trim())) {
           emailInput.classList.add('error');
